@@ -44,3 +44,4 @@ while always == 'y':
         print('invalid choice')
 
     always = input('Would you like to do another calculation? (y/n): ')
+print('Have a good one!')

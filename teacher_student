@@ -1,0 +1,26 @@
+#This code uses functions to create a name entry and display system with multiple options
+def teacher():
+    name = input('Enter name of teacher: ')
+    print('---------------------------')
+    print('Teacher Name')
+    print('------------')
+    print(name)
+def student():
+    name = input('Enter name of student: ')
+    print('---------------------------')
+    print('Student Name')
+    print('------------')
+    print(name)
+
+print('Are you a teacher or a student?')
+print('--------------------------------')
+print('1. Teacher')
+print('2. Student')
+print('--------------------------------')
+ch = int(input('Enter choice: '))
+
+if ch == 1:
+    teacher()
+
+elif ch == 2:
+    student()

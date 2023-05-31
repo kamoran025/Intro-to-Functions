@@ -1,0 +1,46 @@
+def addition(number1, number2):
+    result = number1 + number2
+    return result
+
+def subtract(number1, number2):
+    result = number1 - number2
+    return result
+
+def multiply(number1, number2):
+    result = number1 * number2
+    return result
+
+def division(number1, number2):
+    result = number1 / number2
+    return result
+
+always = 'y'
+
+while always == 'y':
+
+    x = float(input('Enter number 1: '))
+    y = float(input('Enter number 2: '))
+
+    print('-------')
+    print('Options')
+    print('-------')
+    print('1. Add')
+    print('2. Subtract')
+    print('3. Multiply')
+    print('4. Divide')
+    print('--------')
+
+    ch = int(input('Select your option: '))
+
+    if ch == 1:
+        print('The addition is: ', addition(x,y))
+    elif ch == 2:
+        print('The subtraction is: ', subtract(x,y))
+    elif ch == 3:
+        print('The multiplication is: ', multiply(x,y))
+    elif ch == 4:
+        print('The division is: ', division(x,y))
+    else:
+        print('invalid choice')
+
+    always = input('Would you like to do another calculation? (y/n): ')

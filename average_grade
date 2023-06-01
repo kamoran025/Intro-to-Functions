@@ -1,0 +1,28 @@
+def main():
+    def ID():
+        id = int(input('Enter ID number: '))
+        return id
+
+    def NAME():
+        name = input('Enter student name: ')
+        return name
+
+    def AVERAGE(grade1, grade2):
+        average = (grade1 + grade2) / 2
+        return average
+
+    again = 'y'
+    while again == 'y':
+        print('Students: ')
+        print('----------')
+        ID()
+        y = NAME()  # in order to print the returned value, first assign it to a variable
+        grade1 = float(input('Enter grade 1:'))
+        grade2 = float(input('Enter grade 2:'))
+        x = AVERAGE(grade1, grade2)
+        print(f"The average for {y}'s grades is ", x)
+        again = input('Enter more students? (y/n): ')
+    print('-------------------------')
+    print('Have a good one!')
+
+main()

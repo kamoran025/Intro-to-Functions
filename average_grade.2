@@ -10,9 +10,28 @@ def main():
     def AVERAGE(grade1, grade2):
         average = (grade1 + grade2) / 2
         return average
+     def LETTER(x):
+        if x<60:
+            letter = 'F'
+            return letter
+        if 60 < x < 70:
+            letter = 'D'
+            return letter
+        if 70 < x < 80:
+            letter = 'C'
+            return letter
+        if 80 < x < 90:
+            letter = 'B'
+            return letter
+        if 90 < x:
+            letter = 'A'
+            return letter
 
     again = 'y'
+    add_avg = 0.0
+    count = 0.0
     while again == 'y':
+    count += 1
         print('Students: ')
         print('----------')
         ID()
@@ -20,9 +39,14 @@ def main():
         grade1 = float(input('Enter grade 1:'))
         grade2 = float(input('Enter grade 2:'))
         x = AVERAGE(grade1, grade2)
+        add_avg += x
         print(f"The average for {y}'s grades is ", x)
+        z=LETTER(x)
+        print(f"{y}'s final grade is {z}")
         again = input('Enter more students? (y/n): ')
+    final_avg = add_avg/count
     print('-------------------------')
+    print('Your total class average is', final_avg)
     print('Have a good one!')
 
 main()

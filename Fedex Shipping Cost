@@ -1,0 +1,61 @@
+def MAIN():
+
+    def CITY():
+        x = input('ENTER CITY: ')
+        return x
+    def DEST():
+        y = input('ENTER DESTINATION: ')
+        return y
+    def WEIGHT():
+        z = float(input('ENTER PACKAGE WEIGHT: '))
+        return z
+    def MILES():
+        a = float(input('ENTER AIRLINE MILES: '))
+        return a
+    def COST(miles, weight):
+        b = miles * weight
+        return b
+
+    tot_cost = 0.0
+    count = 0.0
+    again = 'y'
+    print('WELCOME TO FEDEX COMPANY')
+    print('------------------------')
+    while again == 'y':
+
+        print('MENU CHOICE')
+        print('-----------')
+        print('1. North America')
+        print('2. South America')
+        print('-----------')
+        ch = int(input('ENTER YOUR CHOICE: '))
+        if ch == 1:
+            print('WELCOME TO NORTH AMERICA FEDEX')
+            city = CITY()
+            dest = DEST()
+            weight = WEIGHT()
+            miles = MILES()
+            cost = COST(miles, weight)
+            tot_cost += cost
+            count += 1
+            print('SHIPPING COST IS: ', cost)
+
+        elif ch == 2:
+            print('WELCOME TO SOUTH AMERICA FEDEX')
+            city = CITY()
+            dest = DEST()
+            weight = WEIGHT()
+            miles = MILES()
+            cost = COST(miles, weight)
+            tot_cost += cost
+            count += 1
+            print('SHIPPING COST IS: ', cost)
+
+        else:
+            print('invalid input')
+
+        again = input('WOULD YOU LIKE TO ENTER MORE FEDEX SHIPPING y/n: ')
+        
+    print('FINAL SHIPPING COST: ', tot_cost)
+
+MAIN()

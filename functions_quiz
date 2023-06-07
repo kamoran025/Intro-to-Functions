@@ -1,0 +1,90 @@
+def main():
+    again = 'y'
+    total_grade_avg = 0.0
+    total_salary_avg = 0.0
+    s_count = 0.0
+    f_count = 0.0
+    while again == 'y':
+        print('MENU CHOICE:')
+        print('------------')
+        print('1. Student')
+        print('2. Faculty')
+        print('------------')
+        ch = int(input('Enter choice: '))
+        if ch == 1:
+            s_count += 1
+            total_grade_avg += student_data()
+        elif ch == 2:
+            f_count += 1
+            total_salary_avg += faculty_data()
+        else:
+            print('Invalid choice')
+        print('-------------------------')
+        again = input('ENTER MORE DATA y/n: ')
+
+    print('The average grade of students is: ', total_grade_avg/s_count)
+    print('The average annual salary of faculty is: ', total_salary_avg/f_count)
+
+
+
+
+def student_data():
+    id = ID()
+    n = NAME()
+    g1 = GRADE1()
+    g2 = GRADE2()
+    avg = AVG(g1, g2)
+    print('The average grade is: ', avg)
+    print(f"{n}'s final grade is: {LETTER(avg)}")
+    return avg
+
+def faculty_data():
+    id = ID()
+    n = NAME()
+    d = DEPT()
+    s = SAL()
+    annual_sal = ANN_SAL(s)
+    print(f"{n}'s annual salary is: ", annual_sal)
+    return annual_sal
+
+def ID():
+    id = int(input('Enter ID: '))
+    return id
+
+def NAME():
+    name = input('Enter name: ')
+    return name
+
+def GRADE1():
+    grade1 = float(input('Enter grade 1: '))
+    return grade1
+
+def GRADE2():
+    grade2 = float(input('Enter grade 2: '))
+    return grade2
+
+def AVG(x,y):
+    final = (x+y)/2
+    return final
+
+def LETTER(grade):
+    if grade < 60:
+        return 'F'
+    elif 60 <= grade < 70:
+        return 'D'
+    elif 70 <= grade < 80:
+        return 'C'
+    elif 80 <= grade < 90:
+        return 'B'
+    elif grade >= 90:
+        return 'A'
+def DEPT():
+    dept = input('Enter department:')
+    return dept
+def SAL():
+    sal = float(input('Enter monthly salary: '))
+    return sal
+def ANN_SAL(x):
+    ann_sal = x * 12
+    return ann_sal
+main()
